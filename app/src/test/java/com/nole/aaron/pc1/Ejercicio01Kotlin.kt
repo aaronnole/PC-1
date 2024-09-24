@@ -14,7 +14,7 @@ class Ejercicio01Kotlin {
         val palabra1 = "listen"
         val palabra2 = "silent"
         println("$palabra1 y $palabra2:")
-        println(sonAnagramas(palabra1, palabra2))  // Debería imprimir true
+        println(sonAnagramas(palabra1, palabra2))
     }
     fun sonAnagramas(palabra1: String, palabra2: String): Boolean {
         // Si las palabras no tienen la misma longitud, no pueden ser anagramas
@@ -24,9 +24,11 @@ class Ejercicio01Kotlin {
         // Crear mapas para almacenar la frecuencia de caracteres de cada palabra
         val frecuencia1 = mutableMapOf<Char, Int>()
         val frecuencia2 = mutableMapOf<Char, Int>()
-        // Contar la frecuencia de cada carácter en la primera palabra
+        // Contar cuántas veces se repite un caracter en la primera palabra
         for (caracter in palabra1) {
-            frecuencia1[caracter] = frecuencia1.getOrDefault(caracter, 0) + 1
+            frecuencia1[caracter] = frecuencia1.getOrDefault(caracter, 0) + 1 //busca en el mapa
+            //si existe el valor asociado a la clave caracter, si no existe lo devuelve como 0, si existe devuelve el valor
+            //que ya tiene, luego incrementa en 1 su valor y le asigna ese valor en el mapa
         }
         // Contar la frecuencia de cada carácter en la segunda palabra
         for (caracter in palabra2) {
